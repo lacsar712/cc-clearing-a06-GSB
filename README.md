@@ -1,6 +1,6 @@
 # 多币种轧差清算工作台（Clearing Netting Workbench）
 
-单币种多边轧差清算全栈演示：录入义务 → 执行轧差 → 查看净头寸 → 确认 settle。
+单币种多边轧差清算全栈演示：录入义务 → 执行轧差 → 查看净头寸 → 确认 settle。另含「轧差对比」页：对同一批 OPEN 义务同时推演双边与多边轧差（仅试算，不改变义务状态）。
 
 ## How to Run
 
@@ -46,10 +46,11 @@ docker compose down
 2. 首页查看 seed 灌入的待轧差义务摘要与最近批次
 3. 「会员」页确认演示会员为 ACTIVE；可新建或启停
 4. 「义务」页筛选 OPEN 义务，或新建一笔同币种义务
-5. 「轧差执行」选择 settleDate + currency（如 USD），执行轧差
-6. 确认净头寸表 ΣnetAmount = 0，批次状态 COMPLETED
-7. 进入批次详情，点击 Settle，义务变为 SETTLED
-8. 使用 `viewer` 登录，确认只能浏览、无法执行写操作
+5. 「轧差对比」选择 settleDate + currency（如 USD），运行对比推演：左右两侧分别展示双边与多边轧差结果；仅试算，义务保持 OPEN
+6. 「轧差执行」选择同样的 settleDate + currency，执行轧差
+7. 确认净头寸表 ΣnetAmount = 0，批次状态 COMPLETED
+8. 进入批次详情，点击 Settle，义务变为 SETTLED
+9. 使用 `viewer` 登录，确认只能浏览、无法执行写操作
 
 健康检查：
 
