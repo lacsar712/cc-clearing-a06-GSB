@@ -48,8 +48,9 @@ docker compose down
 4. 「义务」页筛选 OPEN 义务，或新建一笔同币种义务
 5. 「轧差执行」选择 settleDate + currency（如 USD），执行轧差
 6. 确认净头寸表 ΣnetAmount = 0，批次状态 COMPLETED
-7. 进入批次详情，点击 Settle，义务变为 SETTLED
-8. 使用 `viewer` 登录，确认只能浏览、无法执行写操作
+7. 「轧差对比」选择同一 settleDate + currency，运行对比推演：同批 OPEN 义务同时给出双边（逐对手方净支付）与多边（会员净头寸）两侧结果；推演不落地，义务保持 OPEN
+8. 进入批次详情，点击 Settle，义务变为 SETTLED
+9. 使用 `viewer` 登录，确认只能浏览、无法执行写操作
 
 健康检查：
 
